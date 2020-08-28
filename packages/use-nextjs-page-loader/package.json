@@ -1,0 +1,42 @@
+{
+  "name": "@edusig/use-nextjs-page-loader",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eduardo Sigrist Ciciliato",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0soft/zero-packages.git",
+    "directory": "packages/use-nextjs-page-loader"
+  },
+  "bugs": {
+    "url": "https://github.com/0soft/zero-packages/issues"
+  },
+  "contributors": [
+    {
+      "name": "Eduardo Sigrist Ciciliato",
+      "email": "eduardo.ciciliato@gmail.com",
+      "url": "https://github.com/edusig"
+    }
+  ],
+  "dependencies": {
+    "next": "^9.5.2",
+    "nprogress": "^0.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-is": "^16.13.1",
+    "styled-components": "^5.1.1"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "@types/nprogress": "^0.2.0",
+    "@types/styled-components": "^5.1.2"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

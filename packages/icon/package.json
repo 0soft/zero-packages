@@ -1,0 +1,37 @@
+{
+  "name": "@edusig/icon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eduardo Sigrist Ciciliato",
+  "license": "MIT",
+  "dependencies": {
+    "@edusig/optimized-image": "1.0.0"
+  },
+  "peerDependencies": {
+    "@material-ui/core": "^4.11.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0soft/zero-packages.git",
+    "directory": "packages/icon"
+  },
+  "bugs": {
+    "url": "https://github.com/0soft/zero-packages/issues"
+  },
+  "contributors": [
+    {
+      "name": "Eduardo Sigrist Ciciliato",
+      "email": "eduardo.ciciliato@gmail.com",
+      "url": "https://github.com/edusig"
+    }
+  ],
+  "devDependencies": {
+    "@types/styled-components": "^5.1.2"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

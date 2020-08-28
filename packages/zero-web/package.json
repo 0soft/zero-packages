@@ -1,0 +1,31 @@
+{
+  "name": "@edusig/zero-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eduardo Sigrist Ciciliato",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0soft/zero-packages.git",
+    "directory": "packages/zero-web"
+  },
+  "bugs": {
+    "url": "https://github.com/0soft/zero-packages/issues"
+  },
+  "contributors": [
+    {
+      "name": "Eduardo Sigrist Ciciliato",
+      "email": "eduardo.ciciliato@gmail.com",
+      "url": "https://github.com/edusig"
+    }
+  ],
+  "dependencies": {
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.2"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

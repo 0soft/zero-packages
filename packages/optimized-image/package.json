@@ -1,0 +1,41 @@
+{
+  "name": "@edusig/optimized-image",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eduardo Sigrist Ciciliato",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0soft/zero-packages.git",
+    "directory": "packages/optimized-image"
+  },
+  "bugs": {
+    "url": "https://github.com/0soft/zero-packages/issues"
+  },
+  "contributors": [
+    {
+      "name": "Eduardo Sigrist Ciciliato",
+      "email": "eduardo.ciciliato@gmail.com",
+      "url": "https://github.com/edusig"
+    }
+  ],
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-lazyload": "^3.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "@types/react-lazyload": "^2.6.0"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "dist"
+  ]
+}

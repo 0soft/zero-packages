@@ -1,0 +1,28 @@
+{
+  "name": "@edusig/zero-lib",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eduardo Sigrist Ciciliato",
+  "license": "MIT",
+  "dependencies": {
+    "dayjs": "^1.8.34"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0soft/zero-packages.git",
+    "directory": "packages/zero-lib"
+  },
+  "bugs": {
+    "url": "https://github.com/0soft/zero-packages/issues"
+  },
+  "contributors": [
+    {
+      "name": "Eduardo Sigrist Ciciliato",
+      "email": "eduardo.ciciliato@gmail.com",
+      "url": "https://github.com/edusig"
+    }
+  ],
+  "scripts": {
+    "build": "tsc"
+  }
+}
