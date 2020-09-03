@@ -1,4 +1,4 @@
-import { safeAsyncCore } from '@edusig/zero-lib/src/safe-async-core';
+import { safeAsyncCore } from '@0soft/zero-lib/src/safe-async-core';
 import { WebSnackbar } from './feedback/global-snackbar';
 
 export const safeAsyncWeb = safeAsyncCore({

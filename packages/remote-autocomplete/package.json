@@ -1,7 +1,8 @@
 {
-  "name": "@edusig/remote-autocomplete",
+  "name": "@0soft/remote-autocomplete",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Eduardo Sigrist Ciciliato",
   "license": "MIT",
   "repository": {
@@ -36,5 +37,8 @@
   },
   "scripts": {
     "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.2"
   }
 }

@@ -1,7 +1,8 @@
 {
-  "name": "@edusig/use-nextjs-page-loader",
+  "name": "@0soft/use-nextjs-page-loader",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Eduardo Sigrist Ciciliato",
   "license": "MIT",
   "repository": {
@@ -34,7 +35,8 @@
   },
   "devDependencies": {
     "@types/nprogress": "^0.2.0",
-    "@types/styled-components": "^5.1.2"
+    "@types/styled-components": "^5.1.2",
+    "typescript": "^4.0.2"
   },
   "scripts": {
     "build": "tsc"

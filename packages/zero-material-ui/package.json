@@ -1,7 +1,8 @@
 {
-  "name": "@edusig/zero-material-ui",
+  "name": "@0soft/zero-material-ui",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Eduardo Sigrist Ciciliato",
   "license": "MIT",
   "repository": {
@@ -36,7 +37,8 @@
   },
   "devDependencies": {
     "@apollo/client": "^3.1.4",
-    "@types/react-text-mask": "^5.4.6"
+    "@types/react-text-mask": "^5.4.6",
+    "typescript": "^4.0.2"
   },
   "scripts": {
     "build": "tsc"

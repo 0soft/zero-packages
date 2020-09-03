@@ -1,7 +1,8 @@
 {
-  "name": "@edusig/zero-lib",
+  "name": "@0soft/zero-lib",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Eduardo Sigrist Ciciliato",
   "license": "MIT",
   "dependencies": {
@@ -24,5 +25,8 @@
   ],
   "scripts": {
     "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.2"
   }
 }

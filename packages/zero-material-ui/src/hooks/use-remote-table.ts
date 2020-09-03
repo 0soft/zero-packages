@@ -1,9 +1,9 @@
 import { useState, Dispatch, SetStateAction, useRef, MutableRefObject, useEffect } from 'react';
 import { Query, Column } from 'material-table';
 import * as ApolloReactCommon from '@apollo/client';
-import { WebRelay } from '@edusig/zero-lib/src/web/relay';
+import { WebRelay } from '@0soft/zero-lib/src/web/relay';
 import { safeAsyncWeb } from '../safe-async';
-import { SafeAsyncOptions } from '@edusig/zero-lib/src/safe-async-core';
+import { SafeAsyncOptions } from '@0soft/zero-lib/src/safe-async-core';
 
 export interface SafeAsyncOptionsExtra<T> extends Omit<SafeAsyncOptions<T>, 'successCondition'> {
   successCondition?: boolean | ((res: T) => boolean);

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import MuiIcon from '@material-ui/core/Icon';
-import { OptimizedImage } from '@edusig/optimized-image';
+import { OptimizedImage } from '@0soft/optimized-image';
 import styled from 'styled-components';
 
 export interface IconProps {
