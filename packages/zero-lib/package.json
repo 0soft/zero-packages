@@ -1,6 +1,10 @@
 {
   "name": "@0soft/zero-lib",
-  "version": "1.0.0",
+  "description": "Zerosoft's util functions",
+  "keywords": [
+    "zerosoft"
+  ],
+  "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Eduardo Sigrist Ciciliato",
@@ -10,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/0soft/zero-packages.git",
+    "url": "https://github.com/0soft/zero-packages.git",
     "directory": "packages/zero-lib"
   },
   "bugs": {
@@ -28,5 +32,9 @@
   },
   "devDependencies": {
     "typescript": "^4.0.2"
-  }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ]
 }
