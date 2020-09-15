@@ -7,32 +7,42 @@ export interface SafeAsyncOptions<T> {
   successMessage?: (res: T) => string | string;
 }
 
+export interface DefaultData {
+  [key: string]: any;
+  errors: any[];
+}
+
+export interface DefaultResponse {
+  data: DefaultData;
+}
+
 export const safeAsyncCore = (config?: {
   successFeedback?: (msg: string) => any;
   dangerFeedback?: (msg: string) => any;
-  captureException?: (exception: any) => any;
+  captureException?: (exception: any, response: any) => any;
   supressConsoleError?: boolean;
-}) => async <T = any>(
+}) => async <T extends DefaultResponse | null>(
   asyncFn: () => Promise<T>,
   options: SafeAsyncOptions<T> = {
     successCondition: true,
   }
-): Promise<void> => {
-  let errors: string[] = [];
+) => {
+  let errors: string[] | undefined;
+  let res: T | null = null;
   try {
-    const res = (await asyncFn()) as any;
+    res = await asyncFn();
     if (
       typeof options.successCondition === 'function'
         ? !options.successCondition(res)
         : !options.successCondition
     ) {
-      if (res.data != null) {
-        const ks = Object.keys(res.data);
+      if (res!.data != null) {
+        const ks = Object.keys(res!.data);
         if (ks.length > 0) {
           errors = ks.reduce(
-            (acc, key) =>
-              res.data[key].hasOwnProperty('errors') && res.data[key].errors.length > 0
-                ? acc.concat(res.data[key].errors.map((it: any) => it.message))
+            (acc, it) =>
+              res!.data[it].hasOwnProperty('errors') && res!.data[it].errors.length > 0
+                ? acc.concat(res!.data[it].errors.map((err: any) => err.message))
                 : acc,
             []
           );
@@ -53,11 +63,11 @@ export const safeAsyncCore = (config?: {
     }
   } catch (e) {
     if (config?.supressConsoleError !== true) {
-      // eslint-disable-next-line
+      /* eslint-disable-next-line */
       console.error(e, errors);
     }
     if (config?.captureException != null) {
-      config?.captureException(e);
+      config?.captureException(e, res);
     }
     if (options.onError != null) {
       options.onError(e);
@@ -65,7 +75,7 @@ export const safeAsyncCore = (config?: {
     if (config?.dangerFeedback != null && options.errorMessage != null) {
       config?.dangerFeedback(
         typeof options.errorMessage === 'function'
-          ? options.errorMessage(errors.join('. '))
+          ? options.errorMessage(errors?.join('. '))
           : options.errorMessage
       );
     }
