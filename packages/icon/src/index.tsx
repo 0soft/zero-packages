@@ -65,6 +65,7 @@ export const CustomIconHOC = (iconPath?: string): React.FC<CustomIconProps> => (
   width,
   size,
   className,
+  color,
 }) => {
   if (iconPath != null && icon && typeof icon === 'string') {
     if (/^custom-/.exec(icon)) {

@@ -3,7 +3,7 @@ import React from 'react';
 import { Field } from 'react-final-form';
 import { IconButton, Typography } from '@material-ui/core';
 
-import { Icon } from '../../../icon/src/icon';
+import { Icon } from '@0soft/icon';
 
 interface CounterBaseProps {
   title: string;

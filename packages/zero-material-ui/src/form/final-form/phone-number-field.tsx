@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { TextField } from '@material-ui/core';
-import { PhoneMaskField } from './phone-mask-field';
+import { PhoneMaskField } from '../react-text-mask/phone-mask-field';
 import { Field } from 'react-final-form';
 
 interface OwnProps {

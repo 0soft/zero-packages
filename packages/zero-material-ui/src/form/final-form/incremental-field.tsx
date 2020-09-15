@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IconButton, TextField } from '@material-ui/core';
-import { Icon } from '../../../icon/src/icon';
+import { Icon } from '@0soft/icon';
 
 interface OwnProps {
   /** Name of the field */

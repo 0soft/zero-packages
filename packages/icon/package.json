@@ -1,12 +1,12 @@
 {
   "name": "@0soft/icon",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Eduardo Sigrist Ciciliato",
   "license": "MIT",
   "dependencies": {
-    "@0soft/optimized-image": "1.0.0"
+    "@0soft/optimized-image": "0.0.1"
   },
   "peerDependencies": {
     "@material-ui/core": "^4.11.0",

@@ -8,7 +8,7 @@ import {
   SnackbarOrigin,
 } from '@material-ui/core';
 import styled from 'styled-components';
-import { Icon } from '../../../icon/src/icon';
+import { Icon } from '@0soft/icon';
 
 const SlideTransition = (props: TransitionProps) => {
   return <Slide {...props} direction="up" />;

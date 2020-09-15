@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Autocomplete, createFilterOptions } from '@material-ui/lab';
 import { TextField, Checkbox, Chip } from '@material-ui/core';
-import { Icon } from '../../icon/src/icon';
+import { Icon } from '@0soft/icon';
 import debounce from 'lodash/debounce';
 import { useQuery } from '@apollo/client';
 
@@ -27,7 +27,7 @@ interface RemoteAutocompleteProps {
 const icon = <Icon icon="check_box_outline_blank" />;
 const checkedIcon = <Icon icon="check_box" />;
 
-const RemoteAutocompleteBase: React.FC<RemoteAutocompleteProps> = ({
+export const RemoteAutocomplete: React.FC<RemoteAutocompleteProps> = ({
   multiple,
   queryDocument,
   labelProp,
@@ -165,5 +165,3 @@ const RemoteAutocompleteBase: React.FC<RemoteAutocompleteProps> = ({
     />
   );
 };
-
-export const RemoteAutocomplete = (uri: string) => withApollo(uri)(RemoteAutocompleteBase);

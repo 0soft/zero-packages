@@ -3,14 +3,14 @@ import Router from 'next/router';
 import NProgress from 'nprogress';
 import { createGlobalStyle } from 'styled-components';
 
-export const NProgressStyle = createGlobalStyle`
+export const NProgressStyleCreator = (color?: string) => createGlobalStyle`
 /* Make clicks pass-through */
 #nprogress {
   pointer-events: none;
 }
 
 #nprogress .bar {
-  background: black;
+  background: ${color ?? 'black'};
   position: fixed;
   z-index: 9999;
   top: 0;
@@ -25,7 +25,7 @@ export const NProgressStyle = createGlobalStyle`
   right: 0px;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px black, 0 0 5px black;
+  box-shadow: 0 0 10px ${color ?? 'black'}, 0 0 5px ${color ?? 'black'};
   opacity: 1;
   -webkit-transform: rotate(3deg) translate(0px, -4px);
   -ms-transform: rotate(3deg) translate(0px, -4px);

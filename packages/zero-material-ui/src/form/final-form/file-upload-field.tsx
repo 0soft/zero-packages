@@ -3,7 +3,7 @@ import { Button, Chip, InputLabel, FormHelperText, FormControl } from '@material
 import { useDropzone } from 'react-dropzone';
 import { Field, FieldInputProps, FieldMetaState } from 'react-final-form';
 import styled from 'styled-components';
-import { Icon } from '../../../icon/src/icon';
+import { Icon } from '@0soft/icon';
 
 const DropzoneBox = styled.div.attrs((props: any) => ({
   height: props.height || '100px',
