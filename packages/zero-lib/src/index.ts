@@ -3,6 +3,7 @@ export * from './formatters';
 export * from './validators';
 export * from './web';
 export * from './color';
+export * from './get-params';
 export * from './modulo11';
 export * from './random-string';
 export * from './safe-async-core';
