@@ -3,6 +3,7 @@ export * from './bool-col';
 export * from './cpf-col';
 export * from './date-col';
 export * from './default-col';
+export * from './dict-col';
 export * from './img-col';
 export * from './phone-col';
 export * from './table';
