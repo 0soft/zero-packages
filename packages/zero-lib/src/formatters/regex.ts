@@ -10,7 +10,7 @@ export const formatRegex = (
   if (typeof value === 'string') {
     return value.replace(
       typeof reg === 'function' ? reg(value) : reg,
-      typeof replace === 'function' ? replace(value) : value
+      typeof replace === 'function' ? replace(value) : replace
     );
   }
   return null;
