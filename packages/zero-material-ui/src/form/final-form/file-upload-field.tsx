@@ -4,6 +4,7 @@ import { useDropzone } from 'react-dropzone';
 import { Field, FieldInputProps, FieldMetaState } from 'react-final-form';
 import styled from 'styled-components';
 import AttachmentIcon from '@material-ui/icons/Attachment';
+import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 
 const DropzoneBox = styled.div.attrs((props: any) => ({
   height: props.height || '100px',
@@ -28,7 +29,7 @@ const UploadList = styled.div`
   flex-wrap: wrap;
 `;
 
-const InsertDriveFileIcon = styled(Icon)`
+const InsertDriveFileIconStyled = styled(InsertDriveFileIcon)`
   font-size: 4rem;
 `;
 
@@ -94,7 +95,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
           <p>{dropLabel}</p>
         ) : (
           <>
-            <InsertDriveFileIcon icon="insert_drive_file" />
+            <InsertDriveFileIconStyled />
             <p>{dragLabel}</p>
             <Button onClick={open} disabled={disabled} variant="contained" size="small">
               {buttonLabel}
