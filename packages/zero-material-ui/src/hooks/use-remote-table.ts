@@ -1,9 +1,8 @@
 import { useState, Dispatch, SetStateAction, useRef, MutableRefObject, useEffect } from 'react';
 import { Query, Column } from 'material-table';
 import * as ApolloReactCommon from '@apollo/client';
-import { WebRelay } from '@0soft/zero-lib';
+import { WebRelay, SafeAsyncOptions } from '@0soft/zero-lib';
 import { safeAsyncWeb } from '../safe-async';
-import { SafeAsyncOptions } from '@0soft/zero-lib';
 
 export interface SafeAsyncOptionsExtra<T> extends Omit<SafeAsyncOptions<T>, 'successCondition'> {
   successCondition?: boolean | ((res: T) => boolean);
@@ -112,43 +111,35 @@ export const useRemoteTable = <
   }, [filters]);
 
   const tableDataFn = async (tableQuery: Query<any>) => {
-    return new Promise<any>(async (resolve, reject) => {
-      if (firstFetch) {
-        setFirstFetch(false);
-        return resolve({
-          data: dataMapFn != null ? dataMapFn(query.data) : query.data,
-          page: tableQuery.page || 0,
-          totalCount: query?.data != null ? query?.data[key]?.totalCount || 0 : 0,
-        });
-      }
-      try {
-        const res = await query.refetch({
-          first: tableQuery.pageSize,
-          orderby:
-            tableQuery.orderBy != null
-              ? orderbyTableToQuery(tableQuery.orderBy as any, tableQuery.orderDirection).concat(
-                  defaultOrderBy
-                )
-              : defaultOrderBy,
-          after:
-            tableQuery.page > 0
-              ? WebRelay.encodeCursor(tableQuery.page * tableQuery.pageSize - 1)
-              : undefined,
-          search: tableQuery.search,
-          ...filters,
-        });
-        if (res.data) {
-          resolve({
-            data: dataMapFn != null ? dataMapFn(res.data) : res.data,
-            page: tableQuery.page || 0,
-            totalCount: res.data != null ? res.data[key]?.totalCount || 0 : 0,
-            pageSize: tableQuery.pageSize || 10,
-          });
-        }
-      } catch (e) {
-        reject(e);
-      }
+    if (firstFetch) {
+      setFirstFetch(false);
+      return {
+        data: dataMapFn != null ? dataMapFn(query.data) : query.data,
+        page: tableQuery.page || 0,
+        totalCount: query?.data != null ? query?.data[key]?.totalCount || 0 : 0,
+      };
+    }
+    const res = await query.refetch({
+      first: tableQuery.pageSize,
+      orderby:
+        tableQuery.orderBy != null
+          ? orderbyTableToQuery(tableQuery.orderBy as any, tableQuery.orderDirection).concat(
+              defaultOrderBy
+            )
+          : defaultOrderBy,
+      after:
+        tableQuery.page > 0
+          ? WebRelay.encodeCursor(tableQuery.page * tableQuery.pageSize - 1)
+          : undefined,
+      search: tableQuery.search,
+      ...filters,
     });
+    return {
+      data: res.data ? (dataMapFn != null ? dataMapFn(res.data) : res.data) : [],
+      page: tableQuery.page || 0,
+      totalCount: res.data != null ? res.data[key]?.totalCount || 0 : 0,
+      pageSize: tableQuery.pageSize || 10,
+    };
   };
 
   if (editableMutations != null) {

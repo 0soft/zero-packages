@@ -1,3 +1,1 @@
-export function validateZipcode(value: any) {
-  return value.length === 8;
-}
+export const validateZipcode = (value: any) => value.length === 8;

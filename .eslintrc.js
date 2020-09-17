@@ -13,10 +13,11 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
+    'plugin:jsdoc/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: 'tsconfig.json',
+    project: './tsconfig.json',
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
@@ -31,6 +32,22 @@ module.exports = {
     'react-hooks',
     'import',
   ],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+    linkComponents: [{ name: 'Link', linkAttribute: 'href' }],
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
+    'import/resolver': {
+      // use <root>/tsconfig.json
+      typescript: {
+        alwaysTryTypes: true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+        project: './tsconfig.json',
+      },
+    },
+  },
   rules: {
     '@typescript-eslint/adjacent-overload-signatures': 'error',
     '@typescript-eslint/array-type': [

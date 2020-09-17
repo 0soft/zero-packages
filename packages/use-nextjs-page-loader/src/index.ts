@@ -33,7 +33,7 @@ export const NProgressStyleCreator = (color?: string) => createGlobalStyle`
 }
 `;
 
-export const usePageLoader = (delay: number = 200) => {
+export const usePageLoader = (delay = 200) => {
   const [timer, setTimer] = useState<number | undefined>();
   const routeChangeStart = () => {
     window.clearTimeout(timer);

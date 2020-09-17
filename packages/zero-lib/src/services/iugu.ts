@@ -66,7 +66,7 @@ class Iugu {
       const data = await res.json();
       return { data: { api: data } } as T;
     } catch (e) {
-      // tslint:disable-next-line:no-console
+      // eslint-disable-next-line
       console.error(e);
     }
     return;

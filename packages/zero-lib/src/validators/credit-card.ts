@@ -1,3 +1,1 @@
-export function validateCreditCard(value: any) {
-  return value?.valid === true;
-}
+export const validateCreditCard = (value: any) => value?.valid === true;

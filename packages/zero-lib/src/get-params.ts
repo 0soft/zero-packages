@@ -1,4 +1,4 @@
-export default function getParams(): any {
+export default () => {
   if (!window.location) {
     return {};
   }
@@ -16,4 +16,4 @@ export default function getParams(): any {
   }
 
   return params;
-}
+};

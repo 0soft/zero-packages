@@ -37,7 +37,8 @@ export interface OptimizedImageProps {
   lazy?: boolean;
   /** Base height for the lazy load element while not loaded */
   lazyHeight?: number | string;
-  /** Once the lazy loaded component is loaded, do not detect scroll/resize event anymore. Useful for images or simple components */
+  /** Once the lazy loaded component is loaded, do not detect scroll/resize event anymore.
+   * Useful for images or simple components */
   lazyOnce?: boolean;
   /** Offset to scroll before loading the image in pixels */
   lazyOffset?: number | number[];
@@ -82,9 +83,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   ext,
   width,
   height,
-  children,
   amp,
-  ampLayout,
   className,
   zoomOnHover,
   lazy,

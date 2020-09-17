@@ -1,4 +1,4 @@
-function createCnpj(cnpj: string) {
+const createCnpj = (cnpj: string) => {
   cnpj = cnpj.replace(/[^\d]+/g, '');
 
   if (cnpj === '') {
@@ -51,21 +51,21 @@ function createCnpj(cnpj: string) {
   }
   resultados[1] = soma % 11 < 2 ? 0 : 11 - (soma % 11);
   return resultados;
-}
+};
 
-export function validateCnpj(cnpj: any) {
+export const validateCnpj = (cnpj: any) => {
   cnpj = cnpj.replace(/[^\d]+/g, '');
   const tamanho = cnpj.length - 2;
   const digitos = cnpj.substring(tamanho);
   const resultados = createCnpj(cnpj);
-  // @ts-ignore
-  if (resultados[0] !== parseInt(digitos.charAt(0), 10)) {
-    return false;
+  if (resultados) {
+    if (resultados[0] !== parseInt(digitos.charAt(0), 10)) {
+      return false;
+    }
+    if (resultados[1] !== parseInt(digitos.charAt(1), 10)) {
+      return false;
+    }
+    return true;
   }
-
-  // @ts-ignore
-  if (resultados[1] !== parseInt(digitos.charAt(1), 10)) {
-    return false;
-  }
-  return true;
-}
+  return false;
+};

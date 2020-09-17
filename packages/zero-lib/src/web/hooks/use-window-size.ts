@@ -15,9 +15,9 @@ export const useWindowSize = () => {
       return;
     }
 
-    function handleResize() {
+    const handleResize = () => {
       setWindowSize(getSize());
-    }
+    };
 
     window.addEventListener('resize', handleResize);
     return () => {
