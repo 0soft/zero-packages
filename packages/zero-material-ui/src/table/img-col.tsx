@@ -1,13 +1,18 @@
 import * as React from 'react';
 import { Column } from 'material-table';
-import { OptimizedImage } from '@0soft/optimized-image';
+import { OptimizedImage, OptimizedImageProps } from '@0soft/optimized-image';
 
-export const imgCol = (field: string, title: string, options?: Column<any>) => ({
+export const imgCol = (
+  field: string,
+  title: string,
+  imageOptions: Partial<OptimizedImageProps>,
+  options?: Column<any>
+) => ({
   ...options,
   title,
   field,
   render: (rowData: any) =>
     rowData[field] != null ? (
-      <OptimizedImage src={rowData[field]} width="168px" height="168px"></OptimizedImage>
+      <OptimizedImage src={rowData[field]} {...imageOptions}></OptimizedImage>
     ) : null,
 });
