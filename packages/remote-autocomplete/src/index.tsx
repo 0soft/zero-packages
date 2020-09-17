@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Autocomplete, createFilterOptions } from '@material-ui/lab';
 import { TextField, Checkbox, Chip } from '@material-ui/core';
-import { Icon } from '@0soft/icon';
 import debounce from 'lodash/debounce';
 import { useQuery } from '@apollo/client';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
 
 const filter = createFilterOptions();
 
@@ -24,8 +25,8 @@ interface RemoteAutocompleteProps {
   openText?: string;
 }
 
-const icon = <Icon icon="check_box_outline_blank" />;
-const checkedIcon = <Icon icon="check_box" />;
+const icon = <CheckBoxOutlineBlankIcon />;
+const checkedIcon = <CheckBoxIcon />;
 
 export const RemoteAutocomplete: React.FC<RemoteAutocompleteProps> = ({
   multiple,

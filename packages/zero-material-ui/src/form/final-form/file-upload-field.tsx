@@ -3,7 +3,7 @@ import { Button, Chip, InputLabel, FormHelperText, FormControl } from '@material
 import { useDropzone } from 'react-dropzone';
 import { Field, FieldInputProps, FieldMetaState } from 'react-final-form';
 import styled from 'styled-components';
-import { Icon } from '@0soft/icon';
+import AttachmentIcon from '@material-ui/icons/Attachment';
 
 const DropzoneBox = styled.div.attrs((props: any) => ({
   height: props.height || '100px',
@@ -108,7 +108,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
           input.value.map((file: File, idx: number) => {
             return (
               <Chip
-                icon={<Icon icon="attachment" />}
+                icon={<AttachmentIcon />}
                 label={file.name}
                 className="my-3 mx-2"
                 key={idx}

@@ -1,9 +1,8 @@
-import React from 'react';
-
+import React, { useCallback } from 'react';
 import { Field } from 'react-final-form';
 import { IconButton, Typography } from '@material-ui/core';
-
-import { Icon } from '@0soft/icon';
+import RemoveIcon from '@material-ui/icons/Remove';
+import AddIcon from '@material-ui/icons/Add';
 
 interface CounterBaseProps {
   title: string;
@@ -20,7 +19,7 @@ export const CounterBase: React.FC<CounterBaseProps> = ({
   max = Infinity,
   onChange,
 }) => {
-  const setIncrement = React.useCallback(
+  const setIncrement = useCallback(
     (increment: number) => {
       const newValue = value + increment;
       if (newValue > max || newValue < min) {
@@ -29,7 +28,7 @@ export const CounterBase: React.FC<CounterBaseProps> = ({
 
       onChange(newValue);
     },
-    [value]
+    [value, min, max, onChange]
   );
 
   return (
@@ -39,13 +38,13 @@ export const CounterBase: React.FC<CounterBaseProps> = ({
       </Typography>
       <div className="counter">
         <IconButton onClick={() => setIncrement(-1)}>
-          <Icon icon="remove" />
+          <RemoveIcon />
         </IconButton>
         <Typography variant="h3" component="h3" color="textSecondary">
           {value}
         </Typography>
         <IconButton onClick={() => setIncrement(1)}>
-          <Icon icon="add" />
+          <AddIcon />
         </IconButton>
       </div>
     </div>
