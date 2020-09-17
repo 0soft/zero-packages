@@ -8,7 +8,8 @@ import {
   SnackbarOrigin,
 } from '@material-ui/core';
 import styled from 'styled-components';
-import { Icon } from '@0soft/icon';
+import DoneIcon from '@material-ui/icons/Done';
+import ErrorIcon from '@material-ui/icons/Error';
 
 const SlideTransition = (props: TransitionProps) => {
   return <Slide {...props} direction="up" />;
@@ -39,9 +40,9 @@ const SnackbarContainer = styled.div.attrs((attrs: any) => ({
 
 const snackIcon = {
   default: undefined,
-  success: <Icon icon="done" />,
+  success: <DoneIcon />,
   information: undefined,
-  danger: <Icon icon="error" />,
+  danger: <ErrorIcon />,
 };
 
 const anchor: SnackbarOrigin = { vertical: 'bottom', horizontal: 'center' };

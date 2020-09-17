@@ -27,6 +27,7 @@ This project also require the following peer dependencies:
 | [react-text-mask](https://www.npmjs.com/package/react-text-mask)                 | `^5.4.3`          | `@0soft/zero-material-ui/form/{cnpj-mask,phone-mask-field,zipcode-mask}`                  |
 | [styled-components](https://www.npmjs.com/package/styled-components)             | `^5.1.1`          | `Every`                                                                                   |
 | [validate.js](https://www.npmjs.com/package/validate.js)                         | `^0.13.`          | `@0soft/zero-lib/validation`                                                              |
+| [jspdf](https://www.npmjs.com/package/jspdf)                                     | `^2.1.1`          | `@0soft/zero-material-ui/table/`                                                          |
 
 Install the required ones via:
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Column } from 'material-table';
-import { OptimizedImage } from '@0soft/optimized-image/src';
+import { OptimizedImage } from '@0soft/optimized-image';
 
 export const imgCol = (field: string, title: string, options?: Column<any>) => ({
   ...options,

@@ -2,6 +2,15 @@
 # yarn lockfile v1
 
 
+"@0soft/optimized-image@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@0soft/optimized-image/-/optimized-image-0.0.1.tgz#ad7d4c6e59dbc86a467cbb50d05792410f84503d"
+  integrity sha512-CEKvJqqs8Gb+8VdjeROFLzUQSzv/Ek1l3dfPqbLSakqwJ5+SzoERxWKlYLLpbkDu+pmwC0oEtiZl29e84scIcw==
+  dependencies:
+    react "^16.13.1"
+    react-dom "^16.13.1"
+    react-lazyload "^3.0.0"
+
 "@ampproject/toolbox-core@^2.6.0":
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/@ampproject/toolbox-core/-/toolbox-core-2.6.0.tgz#9824d5f133d82106a9bf0774920843c69fa5c869"
@@ -1872,6 +1881,13 @@
     react-is "^16.8.0"
     react-transition-group "^4.4.0"
 
+"@material-ui/icons@^4.9.1":
+  version "4.9.1"
+  resolved "https://registry.yarnpkg.com/@material-ui/icons/-/icons-4.9.1.tgz#fdeadf8cb3d89208945b33dbc50c7c616d0bd665"
+  integrity sha512-GBitL3oBWO0hzBhvA9KxqcowRUsA0qzwKkURyC8nppnC3fw54KPKZ+d4V1Eeg/UnDRSzDaI9nGCdel/eh9AQMg==
+  dependencies:
+    "@babel/runtime" "^7.4.4"
+
 "@material-ui/lab@^4.0.0-alpha.56":
   version "4.0.0-alpha.56"
   resolved "https://registry.yarnpkg.com/@material-ui/lab/-/lab-4.0.0-alpha.56.tgz#ff63080949b55b40625e056bbda05e130d216d34"
@@ -2717,9 +2733,9 @@ atob@^2.1.2:
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
 attr-accept@^2.0.0:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/attr-accept/-/attr-accept-2.2.1.tgz#89b48de019ed4342f1865626b4389c666b3ed231"
-  integrity sha512-GpefLMsbH5ojNgfTW+OBin2xKzuHfyeNA+qCktzZojBhbA/lPZdCFMWdwk5ajb989Ok7ZT+EADqvW3TAFNMjhA==
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/attr-accept/-/attr-accept-2.2.2.tgz#646613809660110749e92f2c10833b70968d929b"
+  integrity sha512-7prDjvt9HmqiZ0cl5CRjtS84sEyhsHP2coDkaZKRKVfCDo9s7iw7ChVmar78Gu9pC4SoR/28wFu/G5JJhTnqEg==
 
 aws-sign2@~0.7.0:
   version "0.7.0"
@@ -3814,9 +3830,9 @@ data-uri-to-buffer@3.0.0:
     buffer-from "^1.1.1"
 
 date-fns@^2.0.0-alpha.27:
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.0.tgz#d34f0f5f2fd498c984513042e8f7247ea86c4cb7"
-  integrity sha512-DWTRyfOA85sZ4IiXPHhiRIOs3fW5U6Msrp+gElXARa6EpoQTXPyHQmh7hr+ssw2nx9FtOQWnAMJKgL5vaJqILw==
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
+  integrity sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
 
 dateformat@^3.0.0:
   version "3.0.3"
@@ -4430,11 +4446,11 @@ figures@^2.0.0:
     escape-string-regexp "^1.0.5"
 
 file-selector@^0.1.12:
-  version "0.1.12"
-  resolved "https://registry.yarnpkg.com/file-selector/-/file-selector-0.1.12.tgz#fe726547be219a787a9dcc640575a04a032b1fd0"
-  integrity sha512-Kx7RTzxyQipHuiqyZGf+Nz4vY9R1XGxuQl/hLoJwq+J4avk/9wxxgZyHKtbyIPJmbD4A66DWGYfyykWNpcYutQ==
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/file-selector/-/file-selector-0.1.13.tgz#5efd977ca2bca1700992df1b10e254f4e73d2df4"
+  integrity sha512-T2efCBY6Ps+jLIWdNQsmzt/UnAjKOEAlsZVdnQztg/BtAZGNL4uX1Jet9cMM8gify/x4CSudreji2HssGBNVIQ==
   dependencies:
-    tslib "^1.9.0"
+    tslib "^2.0.1"
 
 file-uri-to-path@1.0.0:
   version "1.0.0"
@@ -5537,6 +5553,19 @@ jspdf@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/jspdf/-/jspdf-2.0.0.tgz#cade1cb458cdb75487197284ba942f952d7f4116"
   integrity sha512-4qDyU2T6jp0IcTun1mXO1azrZhoQnY2fbaegwBETa6faN7gXKTLRVHYT7cZ4rUNwoqDpz+XydW/sWJ7YT+An+A==
+  dependencies:
+    atob "^2.1.2"
+    btoa "^1.2.1"
+  optionalDependencies:
+    canvg "^3.0.6"
+    core-js "^3.6.0"
+    dompurify "^2.0.12"
+    html2canvas "^1.0.0-rc.5"
+
+jspdf@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/jspdf/-/jspdf-2.1.1.tgz#4ee5b694eeceb24acd25b98e37a24ce94b1ccc67"
+  integrity sha512-aEZmTr8SgR7Dy2zjFLu6pbg93urA7nZdbS3MIAXs8PSXn1ee7LSpm0JVMYZ+0qS6ZIUI5NriFSTdpVI4QArAXQ==
   dependencies:
     atob "^2.1.2"
     btoa "^1.2.1"
@@ -7343,9 +7372,9 @@ react-double-scrollbar@0.0.15:
   integrity sha1-6RWrjLO5WYdwdfSUNt6/2wQoj+Q=
 
 react-dropzone@^11.0.3:
-  version "11.0.3"
-  resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-11.0.3.tgz#59c396a1482454fa78466f8565336f40ce7f7c84"
-  integrity sha512-+MoMOoKZfkZ9i1+qEFl2ZU29AB/c9K2bFxyACqGynguJunmqO+k2PJ2AcuiH51xVNl9R7q/x5QdBaIWb6RtoSw==
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-11.1.0.tgz#c225f3c53450c80fbd80954361dc039090bfc14c"
+  integrity sha512-gJT6iJadyTbevrigm6KZFaei/yNWfokzs1idumO7fXtRNPiGFDUpsQ+trHWwUO3yWOtJibpbo5tLZggjm+KV5w==
   dependencies:
     attr-accept "^2.0.0"
     file-selector "^0.1.12"
@@ -8702,6 +8731,11 @@ tslib@^1.10.0, tslib@^1.9.0, tslib@^1.9.3:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.13.0.tgz#c881e13cc7015894ed914862d276436fa9a47043"
   integrity sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
+
+tslib@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.1.tgz#410eb0d113e5b6356490eec749603725b021b43e"
+  integrity sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
 
 tty-browserify@0.0.0:
   version "0.0.0"

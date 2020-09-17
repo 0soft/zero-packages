@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
-import { UndecoratedLink } from '@0soft/zero-web/src';
-import { isExternal } from '@0soft/zero-lib/src/web/external-url';
+import { UndecoratedLink } from '@0soft/zero-web';
+import { isExternal } from '@0soft/zero-lib';
 
 interface OwnProps {
   url: string;

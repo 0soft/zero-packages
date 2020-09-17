@@ -162,7 +162,12 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   }
 
   const imgComponent = (
-    <OptimizedImagePicture zoomonhover={zoomOnHover} width={width} height={height}>
+    <OptimizedImagePicture
+      zoomonhover={zoomOnHover}
+      width={width}
+      height={height}
+      className={className}
+    >
       {srcWebp != null && (
         <source srcSet={props.resize ? srcWebp.srcSet : srcWebp} type="image/webp" />
       )}

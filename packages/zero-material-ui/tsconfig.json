@@ -1,8 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "sourceMap": false
   },
-  "include": ["src", "../remote-autocomplete/src/remote-autocomplete.tsx"],
+  "include": ["src"],
   "exclude": ["dist"]
 }
