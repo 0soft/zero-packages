@@ -13,7 +13,8 @@ export interface DefaultData {
 }
 
 export interface DefaultResponse {
-  data: DefaultData;
+  data?: DefaultData | undefined | null;
+  loading?: boolean;
 }
 
 export const safeAsyncCore = (config?: {
@@ -36,13 +37,13 @@ export const safeAsyncCore = (config?: {
         ? !options.successCondition(res)
         : !options.successCondition
     ) {
-      if (res!.data != null) {
+      if (res?.data != null) {
         const ks = Object.keys(res!.data);
         if (ks.length > 0) {
           errors = ks.reduce(
             (acc, it) =>
-              res!.data[it].hasOwnProperty('errors') && res!.data[it].errors.length > 0
-                ? acc.concat(res!.data[it].errors.map((err: any) => err.message))
+              res!.data![it].hasOwnProperty('errors') && res!.data![it].errors.length > 0
+                ? acc.concat(res!.data![it].errors.map((err: any) => err.message))
                 : acc,
             []
           );
