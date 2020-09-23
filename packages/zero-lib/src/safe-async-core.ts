@@ -14,7 +14,6 @@ export interface DefaultData {
 
 export interface DefaultResponse {
   data?: DefaultData | undefined | null;
-  loading?: boolean;
 }
 
 export const safeAsyncCore = (config?: {
