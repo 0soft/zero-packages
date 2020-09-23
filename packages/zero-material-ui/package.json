@@ -1,6 +1,6 @@
 {
   "name": "@0soft/zero-material-ui",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Eduardo Sigrist Ciciliato",
