@@ -9,7 +9,7 @@ export interface SafeAsyncOptions<T> {
 
 export interface DefaultData {
   [key: string]: any;
-  errors: any[];
+  errors?: any[];
 }
 
 export interface DefaultResponse {
