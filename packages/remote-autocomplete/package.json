@@ -36,7 +36,8 @@
     "react-dom": "^16.13.1"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "yarn run build"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.161",
