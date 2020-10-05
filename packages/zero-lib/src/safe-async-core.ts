@@ -1,7 +1,7 @@
 export interface SafeAsyncOptions<T> {
   onSuccess?: (res: T) => any;
-  onError?: (e: Error) => any;
-  onComplete?: () => any;
+  onError?: (e: Error, errors: string[] | undefined, res: T | null) => any;
+  onComplete?: (errors: string[] | undefined, res: T | null) => any;
   successCondition: boolean | ((res: T) => boolean);
   errorMessage?: (errors?: string) => string | string;
   successMessage?: (res: T) => string | string;
@@ -70,7 +70,7 @@ export const safeAsyncCore = (config?: {
       config?.captureException(e, res);
     }
     if (options.onError != null) {
-      options.onError(e);
+      options.onError(e, errors, res);
     }
     if (config?.dangerFeedback != null && options.errorMessage != null) {
       config?.dangerFeedback(
@@ -81,7 +81,7 @@ export const safeAsyncCore = (config?: {
     }
   } finally {
     if (options.onComplete) {
-      options.onComplete();
+      options.onComplete(errors, res);
     }
   }
 };
