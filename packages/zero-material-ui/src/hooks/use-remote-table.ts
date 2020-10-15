@@ -1,8 +1,105 @@
 import { useState, Dispatch, SetStateAction, useRef, MutableRefObject, useEffect } from 'react';
-import { Query, Column } from 'material-table';
 import * as ApolloReactCommon from '@apollo/client';
 import { WebRelay, SafeAsyncOptions } from '@0soft/zero-lib';
 import { safeAsyncWeb } from '../safe-async';
+
+export interface Filter<RowData extends Record<string, unknown>> {
+  column: Column<RowData>;
+  operator: '=';
+  value: any;
+}
+export interface ErrorState {
+  message: string;
+  errorCause: 'query' | 'add' | 'update' | 'delete';
+}
+
+export interface Query<RowData extends Record<string, unknown>> {
+  filters: Filter<RowData>[];
+  page: number;
+  pageSize: number;
+  totalCount: number;
+  search: string;
+  orderBy: Column<RowData>;
+  orderDirection: 'asc' | 'desc';
+  error?: ErrorState;
+}
+
+export interface EditComponentProps<RowData extends Record<string, unknown>> {
+  rowData: RowData;
+  value: any;
+  onChange: (newValue: any) => void;
+  onRowDataChange: (newValue: RowData) => void;
+  columnDef: EditCellColumnDef;
+  error: boolean;
+}
+
+export interface EditCellColumnDef {
+  field: string;
+  title: string;
+  tableData: {
+    columnOrder: number;
+    filterValue: any;
+    groupOrder: any;
+    groupSort: string;
+    id: number;
+    width: string;
+  };
+}
+
+export interface Column<RowData extends Record<string, unknown>> {
+  align?: 'center' | 'inherit' | 'justify' | 'left' | 'right';
+  cellStyle?: React.CSSProperties | ((data: RowData[], rowData: RowData) => React.CSSProperties);
+  currencySetting?: {
+    locale?: string;
+    currencyCode?: string;
+    minimumFractionDigits?: number;
+    maximumFractionDigits?: number;
+  };
+  dateSetting?: { locale?: string; format?: string };
+  customFilterAndSearch?: (filter: any, rowData: RowData, columnDef: Column<RowData>) => boolean;
+  customSort?: (data1: RowData, data2: RowData, type: 'row' | 'group') => number;
+  defaultFilter?: any;
+  defaultGroupOrder?: number;
+  defaultGroupSort?: 'asc' | 'desc';
+  defaultSort?: 'asc' | 'desc';
+  disableClick?: boolean;
+  editComponent?: (props: EditComponentProps<RowData>) => React.ReactElement<any>;
+  emptyValue?: string | React.ReactElement<any> | ((data: any) => React.ReactElement<any> | string);
+  export?: boolean;
+  field?: keyof RowData | string;
+  filtering?: boolean;
+  filterComponent?: (props: {
+    columnDef: Column<RowData>;
+    onFilterChanged: (rowId: string, value: any) => void;
+  }) => React.ReactElement<any>;
+  filterPlaceholder?: string;
+  filterCellStyle?: React.CSSProperties;
+  grouping?: boolean;
+  groupTitle?: string | ((groupData: any) => any) | React.ReactNode;
+  headerStyle?: React.CSSProperties;
+  hidden?: boolean;
+  hiddenByColumnsButton?: boolean;
+  hideFilterIcon?: boolean;
+  initialEditValue?: any;
+  lookup?: Record<string, unknown>;
+  editPlaceholder?: string;
+  editable?:
+    | 'always'
+    | 'onUpdate'
+    | 'onAdd'
+    | 'never'
+    | ((columnDef: Column<RowData>, rowData: RowData) => boolean);
+  removable?: boolean;
+  resizable?: boolean;
+  validate?: (rowData: RowData) => { isValid: boolean; helperText?: string } | string | boolean;
+  render?: (data: RowData, type: 'row' | 'group') => any;
+  searchable?: boolean;
+  sorting?: boolean;
+  title?: string | React.ReactElement<any>;
+  tooltip?: string;
+  type?: 'string' | 'boolean' | 'numeric' | 'date' | 'datetime' | 'time' | 'currency';
+  width?: string | number;
+}
 
 export interface SafeAsyncOptionsExtra<T> extends Omit<SafeAsyncOptions<T>, 'successCondition'> {
   successCondition?: boolean | ((res: T) => boolean);
@@ -174,7 +271,7 @@ export const useRemoteTable = <
                 entityName,
                 action,
               }),
-              errorMessage: (errors: string) =>
+              errorMessage: (errors?: string) =>
                 errors ??
                 t('Error while trying to {{"{{action}}"}} {{"{{entityName}}"}}. Try again later.', {
                   entityName,

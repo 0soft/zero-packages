@@ -32,7 +32,7 @@ export const PhoneNumberField: React.FC<OwnProps> = ({ initialValue = '', name, 
           <TextField
             {...input}
             {...props}
-            InputProps={inputProps}
+            InputProps={inputProps as any}
             error={Boolean(meta.touched && meta.error)}
             helperText={
               meta.touched && meta.error ? meta.error : props.helperText ? props.helperText : null
