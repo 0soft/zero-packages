@@ -14,7 +14,7 @@ interface OwnProps {
   validate?: (values: any) => ValidationErrors | Promise<ValidationErrors> | undefined;
 }
 
-export const FormItem = styled(Grid).attrs((_: any) => ({
+export const FormItem = styled(Grid).attrs((props: any) => ({
   item: true,
   xs: 12,
 }))`
@@ -31,6 +31,7 @@ export const FormItem = styled(Grid).attrs((_: any) => ({
 
 export const DefaultForm: React.FC<OwnProps> = ({
   initialValues,
+  constraint,
   gridSpacing = 4,
   render,
   onSubmit,
@@ -45,7 +46,7 @@ export const DefaultForm: React.FC<OwnProps> = ({
       render={({ ...props }) => (
         <form onSubmit={props.handleSubmit} noValidate>
           <Grid container spacing={gridSpacing}>
-            {render?.apply(null, [props as any])}
+            {render?.apply(null, [props])}
             {children}
           </Grid>
         </form>

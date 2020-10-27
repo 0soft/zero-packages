@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { IconButton, TextField } from '@material-ui/core';
-import { Remove } from '@material-ui/icons';
-import { Add } from '@material-ui/icons';
+import RemoveIcon from '@material-ui/icons/Remove';
+import AddIcon from '@material-ui/icons/Add';
 
 interface OwnProps {
   /** Name of the field */
@@ -27,7 +27,7 @@ export const IncrementalField: React.FC<OwnProps> = ({ name, value, onChange }) 
           onChange(value <= 0 ? 0 : value - 1);
         }}
       >
-        <Remove />
+        <RemoveIcon />
       </IconButton>
       <TextField
         name={name}
@@ -45,7 +45,7 @@ export const IncrementalField: React.FC<OwnProps> = ({ name, value, onChange }) 
           onChange(value + 1);
         }}
       >
-        <Add />
+        <AddIcon />
       </IconButton>
     </div>
   );

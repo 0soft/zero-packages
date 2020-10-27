@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CircularProgress } from '@material-ui/core';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import styled from 'styled-components';
 
 const LoaderContainer = styled.div.attrs((props: any) => ({
