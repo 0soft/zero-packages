@@ -4,7 +4,7 @@
   "keywords": [
     "zerosoft"
   ],
-  "version": "0.0.23-alpha.5+9fc3fe8",
+  "version": "0.0.23-alpha.6+c3261e2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Eduardo Sigrist Ciciliato",
@@ -38,5 +38,5 @@
     "dist",
     "README.md"
   ],
-  "gitHead": "9fc3fe8febdef3702d548609e1939b6ec80c21d2"
+  "gitHead": "c3261e2b385a3e4511ac57d106c569322db69e05"
 }
