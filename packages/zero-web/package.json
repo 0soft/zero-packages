@@ -1,6 +1,6 @@
 {
   "name": "@0soft/zero-web",
-  "version": "0.0.22",
+  "version": "0.0.23-alpha.5+9fc3fe8",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Eduardo Sigrist Ciciliato",
@@ -29,5 +29,6 @@
   },
   "scripts": {
     "build": "tsc"
-  }
+  },
+  "gitHead": "9fc3fe8febdef3702d548609e1939b6ec80c21d2"
 }
